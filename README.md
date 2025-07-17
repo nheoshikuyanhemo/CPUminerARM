@@ -9,6 +9,40 @@ This is a precompiled version of cpuminer-opt for ARM64 (aarch64), compatible wi
 
 ## How to Use
 
+# CPUminer for ARM (Termux Compatible)
+
+Optimized CPU miner for ARM64 devices running Ubuntu in Termux (Proot-distro).
+
+## 📦 Installation
+
+```bash
+pkg install proot-distro -y
+proot-distro install ubuntu
+proot-distro login ubuntu
+```
+### in Ubuntu termux
+```
+apt update && apt install wget tar git -y
+git clone https://github.com/nheoshikuyanhemo/CPUminerARM
+cd CPUminerARM
+chmod +x install.sh start.sh
+./install.sh
+```
+### edit start.sh and seting your wallet & pool 
+```
+nano start.sh
+```
+```
+#!/bin/bash
+./cpuminer -a power2b \
+  -o stratum+tcps://stratum-asia.rplant.xyz:17022 \
+  -u MoY4XMVCEr6jGG9KPktas73kPoo2FDWfgS.Eixa \
+  -t 7
+```
+```
+./start.sh
+```
+
 ### Install dependencies
 
 ```bash
