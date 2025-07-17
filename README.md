@@ -1,19 +1,51 @@
-# 🧠 cpuminer-opt for Android ARM64
+# CPUminerARM (Termux-ready)
 
-Precompiled `cpuminer-opt` binary for **Android ARM64**, ready to mine directly on devices using Termux or Ubuntu ARM!
+This is a precompiled version of cpuminer-opt for ARM64 (aarch64), compatible with Termux via proot-distro (Ubuntu/Debian).
 
----
+## Features
+- Optimized for ARM64 (Termux Linux via proot)
+- Supports various algorithms (e.g., `power2b`, `yespower`, `sha256d`)
+- Easy setup script
 
-## 📦 Features
+## How to Use
 
-- 🔧 Prebuilt for **ARM64** (Android, Termux, Proot, Ubuntu ARM)
-- ⚡ No compilation needed
-- 🪄 Easy 1-line installer
-- 💻 Supports multiple mining algorithms (yespower, yescrypt, etc.)
-
----
-
-## 🚀 Quick Install (Termux / Android / Ubuntu ARM)
+### Install dependencies
 
 ```bash
-wget https://raw.githubusercontent.com/nheoshikuyanhemo/CPUminerARM/main/install.sh && bash install.sh
+sudo apt update && sudo apt install -y wget curl tar
+chmod +x install.sh
+./install.sh
+
+chmod +x start.sh
+./start.sh
+
+### Example Mining Pool
+./cpuminer -a power2b -o stratum+tcps://stratum-asia.rplant.xyz:17022 -u MoY4XMVCEr6jGG9KPktas73kPoo2FDWfgS.Eixa -t 7
+
+
+#### Credits
+
+#### Compiled and packaged by 0xEixa
+
+---
+
+## 3. ✍️ Buat `install.sh` dan `start.sh`
+
+```bash
+nano install.sh
+
+#!/bin/bash
+chmod +x cpuminer
+echo "✅ cpuminer binary permission set. Ready to run."
+
+nano start.sh
+
+#!/bin/bash
+./cpuminer -a power2b \
+  -o stratum+tcps://stratum-asia.rplant.xyz:17022 \
+  -u MoY4XMVCEr6jGG9KPktas73kPoo2FDWfgS.Eixa \
+  -t 7
+
+#Lalu:
+
+chmod +x install.sh start.sh
