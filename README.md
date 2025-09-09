@@ -26,7 +26,7 @@ apt update && apt install wget tar git -y
 git clone https://github.com/nheoshikuyanhemo/CPUminerARM
 cd CPUminerARM
 chmod +x install.sh start.sh
-./install.sh
+./start.sh
 ```
 ### edit start.sh and seting your wallet & pool 
 ```
